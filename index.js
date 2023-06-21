@@ -16,11 +16,13 @@ function startCount() {
         isRunning = true
         intervalId = setInterval(updateTime, 1000);
     }
+    playAudio()
 }
 
 function pauseCount() {
     clearInterval(intervalId);
     isRunning = false;
+    playAudio()
 }
 
 function resetCount() {
@@ -34,6 +36,8 @@ function resetCount() {
     hour = 0;
 
     $("h1").text("00:00:00");
+
+    playAudio()
 }
 
 
@@ -73,5 +77,8 @@ function updateTime() {
 
 }
 
-
+function playAudio(){
+    var audio = new Audio("assets/button-sound.mp3")
+    audio.play()
+}
 
